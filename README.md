@@ -1,5 +1,7 @@
 # Typst templates for different chairs at the University of Duisburg Essen
 
+![Header](ai-template/figures/ude_header.png)
+
 This repository provides [Typst](https://typst.app/) templates for different chairs at the [UDE](https://www.uni-due.de/).
 
 > [!WARNING]
@@ -9,8 +11,8 @@ This repository provides [Typst](https://typst.app/) templates for different cha
 
 ## Overview
 
-| Template | Chair                                                                             |
-|----------|-----------------------------------------------------------------------------------|
-| `ai`     | Chair of Information Systems and Artificial Intelligence (AI) in Marketing (Nadj) |
-| `softec` | Lehrstuhl für Wirtschaftsinformatik und Softwaretechnik (Eicker)                  |
-| `tm`     | Chair of Information Systems and Transformation Management                        |
+| Template | Chair                                                                      |
+|----------|----------------------------------------------------------------------------|
+| `ai`     | Chair of Information Systems and Artificial Intelligence (AI) in Marketing |
+| `softec` | Lehrstuhl für Wirtschaftsinformatik und Softwaretechnik                    |
+| `tm`     | Chair of Information Systems and Transformation Management                 |
