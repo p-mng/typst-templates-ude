@@ -100,7 +100,7 @@
     )
   ]
 
-  show figure.caption: set text(size: 10pt, weight: "bold")
+  show figure.caption: set text(size: 9pt, weight: "bold")
   set table(inset: 12pt, stroke: 0.5pt + black)
   show table.cell.where(y: 0): set table.cell(inset: 0pt)
 
