@@ -1,3 +1,5 @@
+#import "@preview/acrostiche:0.7.0": *
+
 #let tm_template(
   type: "Bachelor project thesis| Master project thesis| Bachelor term paper| Master term paper| Bachelor thesis - exposé | Bachelor thesis| Master thesis -exposé | Master thesis (please delete inappropriate terms)",
   title: "<Titel of Thesis>",
@@ -12,8 +14,14 @@
   reviewer_2: "<Second reviewer>",
   current_semester: "<Current semester>",
   completed_semesters: "<Completed semesters>",
+  acronyms: (
+    "ERP": ("Enterprise Resource Planning",),
+    "IT": ("Information Technology",),
+  ),
   doc,
 ) = {
+  init-acronyms(acronyms)
+
   let margins = (left: 3.5cm, right: 2cm, top: 2.75cm, bottom: 2cm)
 
   let current_heading() = {
@@ -136,7 +144,7 @@
 
   heading(numbering: none, "List of Abbreviations")
 
-  text("TODO")
+  print-index(title: "", row-gutter: 1.2em)
 
   heading(numbering: none, "List of Figures")
 
