@@ -20,8 +20,6 @@
   ),
   doc,
 ) = {
-  init-acronyms(acronyms)
-
   let margins = (left: 3.5cm, right: 2cm, top: 2.75cm, bottom: 2cm)
 
   let current_heading() = {
@@ -147,6 +145,7 @@
 
   heading(numbering: none, "List of Abbreviations")
 
+  init-acronyms(acronyms)
   print-index(title: "", row-gutter: 1.2em)
 
   heading(numbering: none, "List of Figures")
