@@ -36,7 +36,7 @@ Exemplary Table:
 
 As you see, Figures are handled according to tables:
 
-#figure(caption: "IS Success Model", image("tm-template/example-figure.drawio.pdf"))
+#figure(caption: "IS Success Model", image("tm-template/figures/example-figure.drawio.pdf"))
 
 #subcaption[Source: #cite(<delone2003>, form: "prose")]
 
