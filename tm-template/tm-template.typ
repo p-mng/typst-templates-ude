@@ -165,3 +165,10 @@
 
   doc
 }
+
+#let subcaption(body) = {
+  v(-0.6em)
+  set align(center)
+  set text(size: 9pt)
+  body
+}
