@@ -101,9 +101,11 @@
   ]
 
   show figure.caption: set text(size: 9pt, weight: "bold")
-  set table(inset: 12pt, stroke: 0.5pt + black)
-  show table.cell.where(y: 0): set table.cell(inset: 0pt)
+  set figure.caption(position: bottom)
 
+  set table(inset: 12pt, stroke: none, align: top + left, fill: (_, y) => {
+    if calc.odd(y) { rgb("f2f2f2") } else { none }
+  })
   show table: it => {
     pad(left: 0.8cm, right: 0.8cm, it)
   }
@@ -173,3 +175,5 @@
   set text(size: 9pt)
   body
 }
+
+#let table_stroke = stroke(0.5pt + rgb("7e7e7e"))
