@@ -125,7 +125,7 @@
 
     set text(size: 18pt - (it.level * 2pt), weight: "bold")
 
-    block(above: 1.5em, below: 1.5em, {
+    block(above: 1em, below: 1em, {
       if (it.numbering != none) {
         counter(heading).display(it.numbering)
         h(1.4em)
