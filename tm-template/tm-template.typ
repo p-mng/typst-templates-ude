@@ -113,11 +113,6 @@
     it
   }
 
-  show outline.entry.where(level: 1): it => {
-    set text(weight: "bold")
-    block(above: 1.6em, it)
-  }
-
   show heading: it => {
     if (it.level == 1) {
       pagebreak()
@@ -140,7 +135,13 @@
   set text(font: "Verdana", size: 10pt)
   set par(leading: 0.65em * 1.65, spacing: 1.2em * 1.5, justify: true)
 
-  outline(title: "Table of Contents", indent: 2em)
+  {
+    show outline.entry.where(level: 1): it => {
+      set text(weight: "bold")
+      block(above: 1.6em, it)
+    }
+    outline(title: "Table of Contents", indent: 2em)
+  }
 
   heading(numbering: none, "List of Abbreviations")
 
