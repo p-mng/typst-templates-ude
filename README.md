@@ -12,6 +12,12 @@ This repository provides **unofficial** [Typst](https://typst.app/) templates fo
 
 These templates are provided on a best-effort basis. It is highly recommended that you have at least a basic understanding of Typst syntax in order to correctly use these templates and resolve simple issues without help.
 
+## Preview
+
+| AI                             | SOFTEC                                 | TM                             |
+| ------------------------------ | -------------------------------------- | ------------------------------ |
+| ![AI](preview/ai-template.png) | ![SOFTEC](preview/softec-template.png) | ![TM](preview/tm-template.png) |
+
 ## Usage
 
 These templates are not currently published on the Typst Universe. Therefore, they must be installed manually:
