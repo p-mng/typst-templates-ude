@@ -1,4 +1,4 @@
-#import "softec-template/softec-template.typ": chapter, hanging, quotation, softec_template
+#import "softec-template/softec-template.typ": *
 
 #show: softec_template.with()
 
@@ -32,7 +32,7 @@ Für den Begriff Design ist eine Definition notwendig, da es bspw. ein übliches
     (_noun_) a _specification of an object, manifested by some agent, intended to accomplish goals, in a particular environment, using a set of primitive components satisfying a set of requirements, subject to some contraints_; \
     (_verb_, _transitive_) to create a design, in an environment (where the designer operates)."
   ],
-  cite(<ralph2009>, supplement: [P.~108]),
+  cite(<ralph2009>, supplement: [S.~108]),
 )
 
 Die einzelnen Elemente der Definition können nun genauer geprüft werden, um zu verstehen was die Intention hinter der Wahl dieser Begriffe war #cite(<ralph2009>, supplement: [S.~105--108]):
@@ -42,6 +42,24 @@ Die einzelnen Elemente der Definition können nun genauer geprüft werden, um zu
 #hanging[*Design Object*: Die Entität, die entworfen wird, muss -- wie im Software Engineering üblich -- kein physischen Objekt sein muss. Im Kontext des Software- und Web-Engineering ist dies das erzeugte Artefakt.]
 
 #hanging[*Design Agent*: Ein Subjekt oder eine Gruppe von Subjekten erzeugt das Design. Dabei wird üblicherweise von Menschen ausgegangen, allerdings kann auch eine Software diese Aufgabe übernehmen.]
+
+#figure(
+  caption: [Definition für Design als Substantiv #cite(<ralph2009>, supplement: [S.~109])],
+  image("softec-template/figures/figure-2.1.drawio.pdf"),
+)
+
+#hanging[*Environment:* Beim Kontext des Designs, lassen sich zwei Bereiche unterscheiden: Zunächst der Kontext, in dem das Artfefakt angewendet werden oder existieren soll und darüber hinaus auch der Kontext, in dem der Agent agiert um das Design zu erzeugen. #footnote["For instance, the software created by a developer is intended to operate in a different environment than the developer" #cite(<ralph2009>, supplement: [S.~107])]]
+
+#hanging[*Goals:* Die Ziele eines Designs stellen erwünschte Aussagen über das Objekt dar, die auf unterschiedliche Abstraktionsgraden vorliegen können. Damit haben Sie natürlich einen Bezug zum Einfluss des Objektes in seinem Kontext. #footnote[Ziele sind dabei keine notwendige Voraussetzung für ein Design und daher optional. Allerdings bleibt anzumerken, dass ein Design, selbst wenn es kein artikuliertes Ziel verfolgt, immer noch eine Intention haben muss – sonst wäre es kein Design #cite(<ralph2009>, supplement: [S.~106--107).])]]
+
+#hanging[*Primitives:* Die zur Verfügung stehenden Komponenten (bzw. Typen von Komponenten), aus denen das Design entwickelt wird.]
+
+#hanging[*Requirements:* Strukturelle oder verhaltensorientierte Anforderungen an das Objekt. Struk- turelle Eigenschaften sind dabei unabhängig von einem bestimmten Kontext oder von Stimuli. Verhaltensorientierte Eigenschaften dagegen definieren das Verhalten auf ein vorgegebenes Set an Kontextzuständen und Stimuli. #footnote[Folglich sind strukturelle Eigenschaften solche, die nicht von einem vorher definierten Kontext oder Stimuli abhängen]]
+
+#hanging[*Constraints:* Strukturelle oder verhaltensorientierte Einschränkungen für das Objekt. Also diejenigen Randbedingungen, die nicht vom Agenten, durch die Aufgabe oder durch die Komponenten vorgegeben sind. #footnote["[...] physical design is still constrained by the laws of physics, virtual design by the speed and memory of the computational environment, and conceptual design by the mental faculties of the design agent." #cite(<ralph2009>, supplement: [S.~107])]]
+
+#sidenote("Design muss nicht in einem Produkt resultieren.")
+Interessant an dieser Unterscheidung ist vor allem das, was in der Disziplin des Software Engineering ebenso vorgefunden werden kann: Das Ergebnis eines Designs kann auch nur eine Spezifikation sein, die das Objekt beschreibt und muss nicht zwingend das fertig umgesetzte Objekt sein.
 
 #pagebreak()
 #bibliography("softec-refs.bib", style: "springer-basic-author-date")

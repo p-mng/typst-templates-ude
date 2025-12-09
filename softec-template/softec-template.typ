@@ -1,3 +1,5 @@
+#import "@preview/marge:0.1.0"
+
 #let softec_template(
   lang: "de",
   type: "Abschlussarbeit",
@@ -21,7 +23,7 @@
   let ude_blue_dark = rgb("003567")
   let ude_green = rgb("004000")
 
-  let margins = (left: 3.1cm, right: 3.1cm, top: 3.5cm, bottom: 3.5cm)
+  let margins = (left: 3.1cm, right: 3.1cm, top: 3.5cm, bottom: 5cm)
 
   set text(font: "Linux Biolinum", lang: lang)
   set page(margin: margins)
@@ -128,6 +130,12 @@
     #semester
   ]
 
+  set figure(numbering: num => numbering(
+    "1.1",
+    counter(heading.where(level: 1)).get().first(),
+    num,
+  ))
+
   set text(size: 11pt)
   set par(justify: true)
   set outline.entry(fill: pad(left: 0.5em, right: 2em, repeat(gap: 0.5em, ".")))
@@ -143,6 +151,8 @@
 
   show link: set text(fill: ude_green)
   show outline: set text(fill: ude_blue_dark)
+  show figure.caption: set text(size: 8pt)
+  show figure: set block(below: 28pt)
 
   show heading: it => {
     let text_size = 20pt
@@ -208,7 +218,7 @@
 
 // Display a new chapter heading.
 //
-// This automatically inserts a pagebreak before the heading.
+// This automatically inserts a pagebreak before the heading and resets the figure counter.
 //
 // - content (content): The chapter name.
 #let chapter(content) = {
@@ -228,6 +238,11 @@
         ), text(weight: "bold", size: 20pt, it.body)),
     )
   }
+
+  counter(figure.where(kind: image)).update(0)
+  counter(figure.where(kind: table)).update(0)
+  counter(figure.where(kind: raw)).update(0)
+
   heading(content)
 }
 
@@ -253,4 +268,14 @@
 // - content (content): The content to display, usually starting with a bold word separated by a colon.
 #let hanging(content) = {
   par(hanging-indent: 4.2em, content)
+}
+
+// Display a note on the right side of the page.
+//
+// - content (content): The content to display. Make sure this is not too long.
+#let sidenote(content) = {
+  marge.sidenote(side: right, padding: 1em, {
+    set text(size: 8pt)
+    content
+  })
 }
