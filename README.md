@@ -32,6 +32,6 @@ These templates are not currently published on the Typst Universe. Therefore, th
 
 ## Contributing
 
-Some templates are missing features (e.g., confidentiality notes, _eidesstattliche Versicherung_, etc.). In these cases, help in the form of an issue or pull request is highly appreciated.
+Some templates are missing features (e.g., confidentiality notes, _Eidesstattliche Versicherung_, etc.) In these cases, help in the form of an issue or pull request is highly appreciated.
 
 If you would like to add your own template, feel free to open a pull request.
