@@ -279,3 +279,31 @@
     content
   })
 }
+
+// Display the "Eidesstattliche Versicherung".
+//
+// - loc_date (content): Location and date (e.g., "Essen, 9. Dezember 2025")
+// - num (int): How often to print the signature area, useful for group works.
+#let versicherung(loc_date, num: 1) = {
+  heading(outlined: false, numbering: none, "Eidesstattliche Versicherung")
+
+  [Ich versichere an Eides statt durch meine Unterschrift, dass ich die vorstehende Arbeit selbständig und ohne fremde Hilfe angefertigt und alle Stellen, die ich wörtlich oder annähernd wörtlich aus Veröffentlichungen entnommen habe, als solche kenntlich gemacht habe, mich auch keiner anderen als der angegebenen Literatur oder sonstiger Hilfsmittel bedient habe. Die Arbeit hat in dieser oder ähnlicher Form noch keiner anderen Prüfungsbehörde vorgelegen.]
+
+  for _ in range(0, num) {
+    let left_box = {
+      text(underline(loc_date))
+      par(text(size: 9pt, "Ort, Datum"))
+    }
+    let right_box = {
+      text(underline(repeat(sym.space)))
+      par(text(size: 9pt, "Unterschrift"))
+    }
+
+    table(
+      stroke: none,
+      columns: (1fr, 1fr),
+      inset: 20pt,
+      left_box, right_box,
+    )
+  }
+}

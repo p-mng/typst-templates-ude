@@ -63,3 +63,6 @@ Interessant an dieser Unterscheidung ist vor allem das, was in der Disziplin des
 
 #pagebreak()
 #bibliography("softec-refs.bib", style: "springer-basic-author-date")
+
+#pagebreak()
+#versicherung("Essen, 9. Dezember 2025")
