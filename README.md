@@ -5,8 +5,11 @@
 This repository provides **unofficial** [Typst](https://typst.app/) templates for the [University of Duisburg-Essen](https://www.uni-due.de/). Currently, templates for the following chairs are supported:
 
 - **AI:** Chair of Information Systems and Artificial Intelligence (AI) in Marketing (Prof. Dr. Mario Nadj)
+  - version: _December 2025_
 - **SOFTEC:** Lehrstuhl für Wirtschaftsinformatik und Softwaretechnik (Prof. Dr. Stefan Eicker)
+  - version: [1.7.1](https://ctan.org/pkg/udesoftec)
 - **TM:** Chair of Information Systems and Transformation Management (Prof. Dr. Ralf Plattfaut)
+  - version: v1.0
 
 **Important Note:** Please ask your supervisor if you are allowed to use Typst and one of these templates for your thesis or seminar paper. Note that these templates are not checked by the University of Duisburg-Essen or any of its chairs for correctness. For this reason, it is highly recommended that you double-check the output with the official Microsoft Word or LaTeX templates to avoid negative effects on grading.
 
