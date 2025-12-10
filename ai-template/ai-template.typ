@@ -73,7 +73,7 @@
       "Study program:", study_program,
       "Matriculation number:", student_number,
       "First reviewer:", reviewer_1,
-      "Second reviewer:", reviewer_2,
+      ..if reviewer_2 != none { ("Second reviewer:", reviewer_2) },
       "Delivery date:", date,
       "Semester of study:", semester,
     )
@@ -148,10 +148,12 @@
     target: figure.where(kind: table),
   )
 
-  heading(numbering: none, "List of Abbreviations")
+  if acronyms != none {
+    heading(numbering: none, "List of Abbreviations")
 
-  init-acronyms(acronyms)
-  print-index(title: "", row-gutter: 1.2em, delimiter: "")
+    init-acronyms(acronyms)
+    print-index(title: "", row-gutter: 1.2em, delimiter: "")
+  }
 
   counter(page).update(0)
   set page(numbering: "1")
