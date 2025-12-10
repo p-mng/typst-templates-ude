@@ -16,6 +16,8 @@
     "BPM": ("Business Process Management",),
     "RPA": ("Robotic Process Automation",),
   ),
+  omit_lof: false,
+  omit_lot: false,
   doc,
 ) = {
   let margins = (left: 3cm, right: 2cm, top: 2.75cm, bottom: 2cm)
@@ -134,19 +136,23 @@
     outline(title: "Table of Contents")
   }
 
-  heading(numbering: none, "List of Figures")
+  if not omit_lof {
+    heading(numbering: none, "List of Figures")
 
-  outline(
-    title: none,
-    target: figure.where(kind: image),
-  )
+    outline(
+      title: none,
+      target: figure.where(kind: image),
+    )
+  }
 
-  heading(numbering: none, "List of Tables")
+  if not omit_lot {
+    heading(numbering: none, "List of Tables")
 
-  outline(
-    title: none,
-    target: figure.where(kind: table),
-  )
+    outline(
+      title: none,
+      target: figure.where(kind: table),
+    )
+  }
 
   if acronyms != none {
     heading(numbering: none, "List of Abbreviations")
