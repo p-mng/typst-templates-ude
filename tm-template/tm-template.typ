@@ -98,7 +98,9 @@
     )
   ]
 
+  show figure.where(kind: table): set block(breakable: true)
   show figure.caption: set text(size: 9pt, weight: "bold")
+  show table: set par(justify: false)
   show table.cell: set text(size: 8pt)
   set figure.caption(position: bottom)
 
