@@ -3,12 +3,20 @@
 #let tm_template(
   type: "Bachelor project thesis| Master project thesis| Bachelor term paper| Master term paper| Bachelor thesis - exposé | Bachelor thesis| Master thesis -exposé | Master thesis (please delete inappropriate terms)",
   title: "<Titel of Thesis>",
-  first_name: "<First name>",
-  last_name: "<Last name>",
-  address: "<Address line>",
-  postal_code: "<postal code>",
-  city: "<city>",
-  student_number: "<Matrikelnr>",
+  authors: (
+    (
+      name: "<First name> <Last name>",
+      address_1: "<Address line>",
+      address_2: "<postal code> <city>",
+      student_number: "<Matrikelnr>",
+    ),
+    (
+      name: "<First name> <Last name>",
+      address_1: "<Address line>",
+      address_2: "<postal code> <city>",
+      student_number: "<Matrikelnr>",
+    ),
+  ),
   course: "<Course of Study>",
   reviewer_1: "<First reviewer>",
   reviewer_2: "<Second reviewer>",
@@ -78,12 +86,15 @@
     Presented to the Faculty of Informatics \
     of University Duisburg-Essen
 
-    #v(2.5em)
+    #v(2.5em - 4pt)
 
-    #first_name #last_name \
-    #address \
-    #postal_code #city \
-    Matrikelnr: #student_number \
+    #grid(
+      inset: 4pt,
+      column-gutter: 10pt,
+      columns: authors.len(),
+      ..authors.first().keys().map(k => { authors.map(d => d.at(k)) }).flatten(),
+    )
+
     Course of Study: #course
 
     #v(2.5em)
