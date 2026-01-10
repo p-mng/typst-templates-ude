@@ -18,6 +18,7 @@
   ),
   omit_lof: false,
   omit_lot: false,
+  table_full_width: false,
   doc,
 ) = {
   let margins = (left: 3cm, right: 2cm, top: 2.75cm, bottom: 2cm)
@@ -97,8 +98,11 @@
   set table(inset: 12pt, stroke: 0.5pt + black)
   show table.cell.where(y: 0): set table.cell(inset: 0pt)
 
+  let table_pad = if table_full_width { 0.8cm } else { 0pt }
+
   show table: it => {
-    pad(left: 0.8cm, right: 0.8cm, it)
+    set par(justify: false)
+    pad(left: table_pad, right: table_pad, it)
   }
 
   show outline.entry.where(level: 1): it => {
