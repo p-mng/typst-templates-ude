@@ -98,7 +98,7 @@
   set table(inset: 12pt, stroke: 0.5pt + black)
   show table.cell.where(y: 0): set table.cell(inset: 0pt)
 
-  let table_pad = if table_full_width { 0.8cm } else { 0pt }
+  let table_pad = if table_full_width { 0pt } else { 0.8cm }
 
   show table: it => {
     set par(justify: false)
