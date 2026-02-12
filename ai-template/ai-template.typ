@@ -18,6 +18,7 @@
   ),
   omit_lof: false,
   omit_lot: false,
+  omit_loa: false,
   table_full_width: false,
   doc,
 ) = {
@@ -158,11 +159,15 @@
     )
   }
 
-  if acronyms != none {
-    heading(numbering: none, "List of Abbreviations")
+  if not omit_loa {
+    if acronyms != none {
+      heading(numbering: none, "List of Abbreviations")
 
+      init-acronyms(acronyms)
+      print-index(title: "", row-gutter: 1.2em, delimiter: "")
+    }
+  } else {
     init-acronyms(acronyms)
-    print-index(title: "", row-gutter: 1.2em, delimiter: "")
   }
 
   counter(page).update(0)
@@ -170,3 +175,59 @@
 
   doc
 }
+
+// Display the "Eidesstattliche Versicherung".
+//
+// - hilfsmittel_date (str): Date of the E-Mail "Liste erlaubter Hilfsmittel"
+#let versicherung(loc_date, hilfsmittel_date) = [
+  #set par(leading: 0.65em * 0.9, spacing: 1.2em * 0.9, justify: true)
+  #set text(lang: "de")
+
+  #pagebreak()
+
+  #align(right, image("figures/declaration-logo.png"))
+  #v(1.5em)
+  #align(center, text(weight: "bold", underline("Eidesstattliche Versicherung")))
+  #v(1.5em)
+
+  Hiermit versichere ich an Eides Statt, dass ich diese Arbeit bzw. im Fall einer Gruppenarbeit den von mir entsprechend gekennzeichneten Anteil an der Arbeit selbständig verfasst habe. Ich habe keine unzulässige Hilfe Dritter in Anspruch genommen. Zudem habe ich keine anderen als die angegebenen Quellen und Hilfsmittel benutzt und alle Ausführungen (insbesondere Zitate), die anderen Quellen wörtlich oder sinngemäß entnommen wurden, kenntlich gemacht. Die Liste zugelassener Hilfsmittel vom #hilfsmittel_date ist mir ausdrücklich bekannt.
+
+  Ich versichere, dass die von mir in elektronischer Form eingereichte Version dieser Arbeit mit den eingereichten gedruckten Exemplaren übereinstimmt.
+
+  Mir ist bekannt, dass im Falle eines Täuschungsversuches die betreffende Leistung als mit "nicht ausreichend" (5,0) bewertet gilt. Zudem kann ein Täuschungsversuch als Ordnungswidrigkeit mit einer Geldbuße von bis zu 50.000 Euro geahndet werden. Im Falle eines mehrfachen oder sonstigen schwerwiegenden Täuschungsversuchs kann ich zudem exmatrikuliert werden.
+
+  Mir ist bekannt, dass sich die Prüferin oder der Prüfer bzw. der Prüfungsausschuss zur Feststellung der Täuschung des Einsatzes einer entsprechenden Software oder sonstiger elektronischer Hilfsmittel bedienen kann.
+
+  Ich versichere an Eides Statt, dass ich die vorbenannten Angaben nach bestem Wissen und Gewissen gemacht habe und dass die Angaben der Wahrheit entsprechen und ich nichts verschwiegen habe.
+
+  Die Strafbarkeit einer falschen eidesstattlichen Versicherung ist mir bekannt, insbesondere die Strafandrohung gemäß §§ 156, 161 StGB, auf welche ich konkret hingewiesen wurde.
+
+  #v(1.5em)
+
+  #block(stroke: 1pt + black, inset: 0.5em)[
+    #set text(size: 9pt)
+
+    #v(1em)
+    #align(center, text(weight: "bold", "§ 156 Falsche Versicherung an Eides Statt"))
+
+    Wer vor einer zur Abnahme einer Versicherung an Eides Statt zuständigen Behörde eine solche Versicherung falsch abgibt oder unter Berufung auf eine solche Versicherung falsch aussagt, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft.
+
+    #align(center, text(
+      weight: "bold",
+      "§ 161 Fahrlässiger Falscheid; fahrlässige falsche Versicherung an Eides Statt",
+    ))
+
+    (1) Wenn eine der in den §§ 154 bis 156 bezeichneten Handlungen aus Fahrlässigkeit begangen worden ist, so tritt Freiheitsstrafe bis zu einem Jahr oder Geldstrafe ein.
+
+    (2) Straflosigkeit tritt ein, wenn der Täter die falsche Angabe rechtzeitig berichtigt. Die Vorschriften des § 158 Abs. 2 und 3 gelten entsprechend.
+
+    #v(1em)
+  ]
+
+  #v(4.5em)
+
+  #block(width: 50%, {
+    text(underline(repeat(sym.space)))
+    par(text(size: 9pt, [Ort, Datum #h(3em) Unterschrift]))
+  })
+]
