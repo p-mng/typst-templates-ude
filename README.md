@@ -10,6 +10,8 @@ This repository provides **unofficial** [Typst](https://typst.app/) templates fo
   - version: [1.7.1](https://ctan.org/pkg/udesoftec)
 - **TM:** Chair of Information Systems and Transformation Management (Prof. Dr. Ralf Plattfaut)
   - version: 1.0
+- **APP**: Wirtschaftsinformatik und Applikationsmanagement (Prof. Dr. Mario Schaarschmidt)
+  - version: 15.10.2025
 
 **Important Note:** Please ask your supervisor if you are allowed to use Typst and one of these templates for your thesis or seminar paper. Note that these templates are not checked by the University of Duisburg-Essen or any of its chairs for correctness. For this reason, it is highly recommended that you double-check the output with the official Microsoft Word or LaTeX templates to avoid negative effects on grading.
 
@@ -17,9 +19,9 @@ These templates are provided on a best-effort basis. It is highly recommended th
 
 ## Preview
 
-| AI                             | SOFTEC                                 | TM                             |
-| ------------------------------ | -------------------------------------- | ------------------------------ |
-| ![AI](preview/ai-template.png) | ![SOFTEC](preview/softec-template.png) | ![TM](preview/tm-template.png) |
+| AI                             | SOFTEC                                 | TM                             | APP                              |
+| ------------------------------ | -------------------------------------- | ------------------------------ | -------------------------------- |
+| ![AI](preview/ai-template.png) | ![SOFTEC](preview/softec-template.png) | ![TM](preview/tm-template.png) | ![APP](preview/app-template.png) |
 
 ## Usage
 
