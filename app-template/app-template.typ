@@ -26,6 +26,9 @@
     "AI": ("Artificial Intelligence",),
     "IT": ("Information Technology",),
   ),
+  omit_loa: false,
+  omit_lof: false,
+  omit_lot: false,
   doc,
 ) = {
   let margins_titlepage = (left: 2cm, right: 1.5cm, top: 1.25cm, bottom: 1cm)
@@ -167,24 +170,27 @@
     outline(title: "Table of Contents", indent: 2em)
   }
 
-  heading(numbering: none, "List of Abbreviations")
-
   init-acronyms(acronyms)
-  print-index(title: "", row-gutter: 1.2em)
+  if not omit_loa {
+    heading(numbering: none, "List of Abbreviations")
+    print-index(title: "", row-gutter: 1.2em)
+  }
 
-  heading(numbering: none, "List of Figures")
+  if not omit_lof {
+    heading(numbering: none, "List of Figures")
+    outline(
+      title: none,
+      target: figure.where(kind: image),
+    )
+  }
 
-  outline(
-    title: none,
-    target: figure.where(kind: image),
-  )
-
-  heading(numbering: none, "List of Tables")
-
-  outline(
-    title: none,
-    target: figure.where(kind: table),
-  )
+  if not omit_lot {
+    heading(numbering: none, "List of Tables")
+    outline(
+      title: none,
+      target: figure.where(kind: table),
+    )
+  }
 
   counter(page).update(0)
   set page(numbering: "1")
