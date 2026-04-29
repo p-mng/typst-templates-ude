@@ -85,6 +85,7 @@
     #set page(margin: 0.5cm)
 
     #image("figures/ude_header.png")
+    #place(top + right, dy: 18pt, image("figures/logo_claim_rgb.svg", height: 54pt))
 
     #v(44pt)
 
