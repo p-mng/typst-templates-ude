@@ -99,7 +99,7 @@
 
     #v(42pt)
 
-    Vorgelegt der Fakultät für Wirtschaftswissenschaften der \
+    Vorgelegt der Fakultät für Informatik der \
     Universität Duisburg-Essen
 
     #v(140pt)
