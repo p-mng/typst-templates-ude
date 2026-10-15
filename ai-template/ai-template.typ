@@ -20,6 +20,7 @@
   omit_lot: false,
   omit_loa: false,
   table_full_width: false,
+  header_size: 28pt,
   doc,
 ) = {
   let margins = (left: 3cm, right: 2cm, top: 2.75cm, bottom: 2cm)
@@ -60,7 +61,7 @@
 
     // Header text
     #v(8.5em)
-    #set text(size: 28pt)
+    #set text(size: header_size)
     #text(weight: "bold", title) \
     #text(size: 12pt, type)
 
